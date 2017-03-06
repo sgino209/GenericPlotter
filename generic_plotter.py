@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-#   ____                      _       __        __               __
-#  / ___| ___ _ __   ___ _ __(_) ___  \ \      / /_ ___   _____ / _| ___  _ __ _ __ ___
-# | |  _ / _ \ '_ \ / _ \ '__| |/ __|  \ \ /\ / / _` \ \ / / _ \ |_ / _ \| '__| '_ ` _ \
-# | |_| |  __/ | | |  __/ |  | | (__    \ V  V / (_| |\ V /  __/  _| (_) | |  | | | | | |
-#  \____|\___|_| |_|\___|_|  |_|\___|    \_/\_/ \__,_| \_/ \___|_|  \___/|_|  |_| |_| |_|
+#   ____                      _        ____  _       _   _            
+#  / ___| ___ _ __   ___ _ __(_) ___  |  _ \| | ___ | |_| |_ ___ _ __ 
+# | |  _ / _ \ '_ \ / _ \ '__| |/ __| | |_) | |/ _ \| __| __/ _ \ '__|
+# | |_| |  __/ | | |  __/ |  | | (__  |  __/| | (_) | |_| |_  __/ |   
+#  \____|\___|_| |_|\___|_|  |_|\___| |_|   |_|\___/ \__|\__\___|_|   
 #
 # Created by Shahar Gino at February 2017
 #
@@ -90,11 +90,10 @@ class PlotObj:
             idx = 0
             width = 0.35
             ind = arange(len(self.x_var))
-            print ind
             for y_var in self.y_vars:
                 x = []
                 for x_ in y_var:
-                    x.append(int(x_))
+                    x.append(float(x_))
                 self.ax.bar(left=ind+idx*width, height=x, width=width, color=self.cmap(10*idx))
                 idx += 1
 
@@ -200,6 +199,7 @@ def usage():
     print '        (-) Supported PlotType:  xy, bars, scatter, hist'
     print '        (-) Supported PlotAttributes:  --fig_name, --saveas, --xlabel, --ylabel, --ylabels'
     print '        (-) The -x and -y flags can contain a filename path, which contains the string vector (e.g. -x "./x_file.txt, where ./x_file.txt contains: "1 2 3")'
+    print '        (-) Useful command for substituting new-lines with spaces (in files):  tr "\\n" " " < myFile'
     print ''
     print 'Additional information:  http://matplotlib.org/gallery.html'
     print ''
