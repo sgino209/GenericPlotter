@@ -5,9 +5,9 @@
 # | |_| |  __/ | | |  __/ |  | | (__    \ V  V / (_| |\ V /  __/  _| (_) | |  | | | | | |
 #  \____|\___|_| |_|\___|_|  |_|\___|    \_/\_/ \__,_| \_/ \___|_|  \___/|_|  |_| |_| |_|
 #
-# Created by Shahar Gino at September 2016
+# Created by Shahar Gino at February 2017
 #
-# Usage:  % generic_waveform.py -h
+# Usage:  % generic_plotter.py -h
 
 from time import time
 import datetime
@@ -114,7 +114,7 @@ class PlotObj:
         elif self.plot_type == 'hist':
             x = []
             for x_ in self.x_var:
-                x.append(int(x_))
+                x.append(float(x_))
             plt.hist(x, hist_bins, normed=1, facecolor='green', alpha=0.5)
             plt.grid(True)
 
